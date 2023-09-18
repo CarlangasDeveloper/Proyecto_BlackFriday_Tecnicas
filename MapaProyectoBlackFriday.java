@@ -40,6 +40,9 @@ public class MapaProyectoBlackFriday {
         mapa[jugadorFila][jugadorColumna] = '▓'; // Representa al jugador
 
         int puntos = 0; // Variable para almacenar los puntos del jugador
+        int mov = 0; //Variable para almacenar los movimienos del jugador
+
+        System.out.println();
 
         // Bucle principal del juego
         while (true) {
@@ -51,9 +54,9 @@ public class MapaProyectoBlackFriday {
                 System.out.println();
             }
 
-            System.out.println("Puntos: " + puntos); // Mostrar los puntos
-
-            System.out.println("Direccion: 1: Derecha | 2: Izquierda | 3: Arriba | 4: Abajo | 0: Salir");
+            System.out.println("Puntos totales: " + puntos+ "\nRestantes: "+objetosRestantes); // Mostrar los puntos
+            System.out.println("Movimientos: "+mov); //Mostrar numero de movimientos
+            System.out.println("Direccion: 1: Izquierda | 2: Derecha | 3: Arriba | 4: Abajo | 0: Salir");
             int movimiento = scanner.nextInt();
 
             if (movimiento == 0) {
@@ -66,10 +69,10 @@ public class MapaProyectoBlackFriday {
             // Procesar el movimiento del jugador
             switch (movimiento) {
                 case 1:
-                    nuevaColumna++;
+                    nuevaColumna--;
                     break;
                 case 2:
-                    nuevaColumna--;
+                    nuevaColumna++;
                     break;
                 case 3:
                     nuevaFila--;
@@ -93,8 +96,15 @@ public class MapaProyectoBlackFriday {
                 mapa[nuevaFila][nuevaColumna] = '▓';
                 jugadorFila = nuevaFila;
                 jugadorColumna = nuevaColumna;
+                mov++; //Incrementa los movimientos del jugador
 
                 if (objetosRestantes == 0) {
+                    for (int i = 0; i < filas; i++) {
+                        for (int j = 0; j < columnas; j++) {
+                            System.out.print(mapa[i][j]);
+                        }
+                        System.out.println();
+                    }
                     System.out.println("¡Has recogido todos los objetos! Ganaste.");
                     break;
                 }
