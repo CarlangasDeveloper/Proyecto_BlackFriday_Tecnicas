@@ -18,7 +18,7 @@ public class MapaProyectoBlackFriday {
                 } else if (rand.nextDouble() < 0.3) {
                     mapa[i][j] = '#'; // Paredes (30% de probabilidad)
                 } else {
-                    mapa[i][j] = '.'; // Espacio en blanco (70% de probabilidad)
+                    mapa[i][j] = '-'; // Espacio en blanco (70% de probabilidad)
                 }
             }
         }
@@ -29,7 +29,7 @@ public class MapaProyectoBlackFriday {
             int fila = rand.nextInt(filas);
             int columna = rand.nextInt(columnas);
 
-            if (mapa[fila][columna] == '.') {
+            if (mapa[fila][columna] == '-') {
                 mapa[fila][columna] = '■'; // Representa un objeto al cual toca recolectar para ganar
                 objetosRestantes++;
             }
@@ -37,7 +37,7 @@ public class MapaProyectoBlackFriday {
 
         int jugadorFila = filas / 2;
         int jugadorColumna = columnas / 2;
-        mapa[jugadorFila][jugadorColumna] = '☻'; // Representa al jugador
+        mapa[jugadorFila][jugadorColumna] = '▓'; // Representa al jugador
 
         int puntos = 0; // Variable para almacenar los puntos del jugador
 
@@ -89,8 +89,8 @@ public class MapaProyectoBlackFriday {
                     puntos++; // Incrementar puntos cuando se recoge un objeto
                 }
 
-                mapa[jugadorFila][jugadorColumna] = '.';
-                mapa[nuevaFila][nuevaColumna] = '☻';
+                mapa[jugadorFila][jugadorColumna] = '-';
+                mapa[nuevaFila][nuevaColumna] = '▓';
                 jugadorFila = nuevaFila;
                 jugadorColumna = nuevaColumna;
 
