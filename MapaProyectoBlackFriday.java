@@ -58,6 +58,7 @@ public class MapaProyectoBlackFriday {
             System.out.println("Movimientos: "+mov); //Mostrar numero de movimientos
             System.out.println("Direccion: 1: Izquierda | 2: Derecha | 3: Arriba | 4: Abajo | 0: Salir");
             int movimiento = scanner.nextInt();
+            System.out.println();
 
             if (movimiento == 0) {
                 break; // Salir del juego si el jugador ingresa 0
@@ -82,6 +83,7 @@ public class MapaProyectoBlackFriday {
                     break;
                 default:
                     System.out.println("Movimiento no válido.");
+                    System.out.println();
                     continue;//repite el bucle despues de el default
             }
 
