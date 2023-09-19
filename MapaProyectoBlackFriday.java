@@ -82,7 +82,7 @@ public class MapaProyectoBlackFriday {
                     nuevaFila++;
                     break;
                 default:
-                    System.out.println("Movimiento no válido.");
+                    System.out.println("Digito No Autorizado.");
                     System.out.println();
                     continue;//repite el bucle despues de el default
             }
@@ -112,6 +112,7 @@ public class MapaProyectoBlackFriday {
                 }
             } else {
                 System.out.println("Movimiento inválido.");
+                System.out.println();
             }
         }
 
